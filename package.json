@@ -1,7 +1,7 @@
 {
-  "name": "example-lib-typescript-victor",
-  "version": "0.8.0",
-  "description": "",
+  "name": "react-intl-universal-reporter",
+  "version": "0.1.0",
+  "description": "An report generator to measure the number of internationalized and non-internationalized occurrences of a project.",
   "main": "dist/cjs/index.js",
   "bin": {
     "intl-report": "bin/intl-report"
@@ -45,13 +45,13 @@
     "internationalization",
     "report"
   ],
-  "repository": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal",
+  "repository": "https://github.com/victorsoares96/react-intl-universal-reporter",
   "author": "Victor Soares <vitorsoares96@hotmail.com> (https://github.com/victorsoares96)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal/issues"
+    "url": "https://github.com/victorsoares96/react-intl-universal-reporter/issues"
   },
-  "homepage": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal#readme",
+  "homepage": "https://github.com/victorsoares96/react-intl-universal-reporter#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",

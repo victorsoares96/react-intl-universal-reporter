@@ -1,7 +1,7 @@
 {
-  "name": "example-lib-typescript-victor",
-  "version": "0.8.0",
-  "description": "",
+  "name": "react-intl-universal-reporter",
+  "version": "0.1.0",
+  "description": "An report generator to measure the number of internationalized and non-internationalized occurrences of a project.",
   "main": "dist/cjs/index.js",
   "bin": {
     "intl-report": "bin/intl-report"

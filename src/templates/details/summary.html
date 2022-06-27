@@ -1,0 +1,46 @@
+<!--<%= topIssues %>-->
+<div class="row">
+  <div
+    class="page-header"
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <h3>Resume</h3>
+
+    <div>
+      <small
+        >Internationalized: <strong><%= internationalizedCount %></strong>, Not
+        Internationalized: <strong><%= notInternationalizedCount %></strong>,
+        Total Occurrences: <strong><%= totalCount %></strong></small
+      >
+    </div>
+  </div>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Internationalized</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= internationalizedOccurrences %>
+    </tbody>
+  </table>
+
+  <div style="margin: 10px 0"></div>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Not Internationalized</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= notInternationalizedOccurrences %>
+    </tbody>
+  </table>
+</div>

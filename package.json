@@ -1,0 +1,116 @@
+{
+  "name": "example-lib-typescript-victor",
+  "version": "0.8.0",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "bin": {
+    "intl-report": "bin/intl-report"
+  },
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.js",
+  "scripts": {
+    "prepare": "husky install",
+    "clean": "rimraf dist/",
+    "copy-files:cjs": "copyfiles -u 1 src/helpers/*.html src/templates/*.html src/templates/**/*.html src/templates/details/**/*.html src/**/*.json dist/cjs",
+    "copy-files:esm": "copyfiles -u 1 src/helpers/*.html src/templates/*.html src/templates/**/*.html src/templates/details/**/*.html src/**/*.json dist/esm",
+    "build:cjs": "tsc -p config/tsconfig.cjs.json --skipLibCheck",
+    "build:esm": "tsc -p config/tsconfig.esm.json --skipLibCheck",
+    "build:types": "tsc -p config/tsconfig.types.json --skipLibCheck",
+    "prettier": "prettier \"*.{js,json,yml,yaml,md}\" \"src/**/*\" --write",
+    "lint:fix": "eslint --color --ext .ts \"src/**/*.+(ts)\" --fix",
+    "test": "jest --no-cache --runInBand --passWithNoTests",
+    "test:coverage": "jest --coverage --no-cache --runInBand --passWithNoTests",
+    "type-check": "tsc --pretty --noEmit --skipLibCheck --esModuleInterop --resolveJsonModule",
+    "package": "npm run build && npm pack",
+    "prebuild": "npm run clean",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "postbuild": "npm run copy-files:cjs && npm run copy-files:esm",
+    "prerelease": "npm run lint:fix && npm run type-check && npm run test:coverage",
+    "release": "npm run build && npm publish",
+    "commit": "git-cz"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "keywords": [
+    "eslint",
+    "react-intl",
+    "react-intl-universal",
+    "intl",
+    "i18n",
+    "internationalization",
+    "report"
+  ],
+  "repository": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal",
+  "author": "Victor Soares <vitorsoares96@hotmail.com> (https://github.com/victorsoares96)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal/issues"
+  },
+  "homepage": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "npm run prettier",
+      "npm run lint:fix",
+      "npm run type-check"
+    ]
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0",
+    "@typescript-eslint/parser": "^5.0.0"
+  },
+  "dependencies": {
+    "eslint-plugin-react-intl-universal": "^1.0.4",
+    "glob-promise": "^4.2.2",
+    "gulp": "^4.0.2",
+    "gulp-eslint-new": "^1.5.1",
+    "lodash": "^4.17.21",
+    "ora": "5.4.1",
+    "@typescript-eslint/parser": "^5.28.0",
+    "typescript": "4.4.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/gulp": "^4.0.9",
+    "@types/jest": "^28.1.3",
+    "@types/lodash": "^4.14.182",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "commitizen": "^4.2.4",
+    "copyfiles": "^2.4.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.4.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5"
+  },
+  "engines": {
+    "npm": "not allowed in this project",
+    "yarn": ">= 1.22.0",
+    "node": ">=16.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

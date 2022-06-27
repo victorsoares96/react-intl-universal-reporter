@@ -45,13 +45,13 @@
     "internationalization",
     "report"
   ],
-  "repository": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal",
+  "repository": "https://github.com/victorsoares96/react-intl-universal-reporter",
   "author": "Victor Soares <vitorsoares96@hotmail.com> (https://github.com/victorsoares96)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal/issues"
+    "url": "https://github.com/victorsoares96/react-intl-universal-reporter/issues"
   },
-  "homepage": "https://github.com/victorsoares96/eslint-plugin-react-intl-universal#readme",
+  "homepage": "https://github.com/victorsoares96/react-intl-universal-reporter#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -104,7 +104,6 @@
     "ts-jest": "^27.0.5"
   },
   "engines": {
-    "npm": "not allowed in this project",
     "yarn": ">= 1.22.0",
     "node": ">=16.0.0"
   },

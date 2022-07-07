@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import glob from 'glob-promise';
 import _ from 'lodash';
 import ora from 'ora';
@@ -18,18 +19,19 @@ export async function getSettings(
         );
       } else {
         spinner.info(`Using settings from ${reporterSettingsPath}`);
-        const reporterSettings = await fs.promises.readFile(
-          reporterSettingsPath
+        const reporterSettings = await import(
+          path.resolve(reporterSettingsPath)
         );
+
         return _.defaults(
           {},
-          JSON.parse(reporterSettings.toString()),
+          reporterSettings.default,
           reporterDefaultSettings
         );
       }
     }
 
-    const files = await glob('**/.intlrc', {});
+    const files = await glob('**/.intlrc.{json,js}', {});
 
     if (_.isEmpty(files)) {
       spinner.warn('No .intlrc file found. Using default settings');
@@ -42,12 +44,9 @@ export async function getSettings(
 
     const [file] = files;
     spinner.info(`Using settings from ${file}`);
-    const reporterSettings = await fs.promises.readFile(file);
-    return _.defaults(
-      {},
-      JSON.parse(reporterSettings.toString()),
-      reporterDefaultSettings
-    );
+    const reporterSettings = await import(path.resolve(file));
+
+    return _.defaults({}, reporterSettings.default, reporterDefaultSettings);
   } catch (error: any) {
     throw new Error(error);
   }

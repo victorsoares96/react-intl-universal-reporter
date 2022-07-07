@@ -1,3 +1,18 @@
+export type Result = {
+  /**
+   * Number of occurrences of non-internationalized strings.
+   */
+  notInternationalizedCount: number;
+  /**
+   * Number of occurrences of internationalized strings.
+   */
+  internationalizedCount: number;
+  /**
+   * Percentage of occurrences of internationalized strings.
+   */
+  percentage: number;
+};
+
 export type Analyzer = {
   [key in
     | 'words'

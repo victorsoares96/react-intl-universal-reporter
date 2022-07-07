@@ -36,9 +36,7 @@ export async function generateReport(
     .pipe(
       gulpESLintNew
         .format(
-          (results) => {
-            return generateTemplate(results, reporterSettings);
-          },
+          (results) => generateTemplate(results, reporterSettings),
           (results) => {
             const reportName = `intl-report-${new Date().getTime()}.html`;
             if (!fs.existsSync(output)) fs.mkdirSync(output);

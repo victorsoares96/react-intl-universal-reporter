@@ -169,6 +169,11 @@ type Result = {
 };
 ```
 
+## Help to improve this project
+
+  If you find this project useful, please consider [donating](https://www.paypal.com/donate/?business=YNAUBS5LFN5KN&no_recurring=0&currency_code=USD) to support the development of this project.
+  
+
 ## Thanks
 
 * [eslint-detailed-reporter](https://github.com/mportuga/eslint-detailed-reporter) by [mportuga](https://github.com/mportuga), many parts of my project were based on yours.

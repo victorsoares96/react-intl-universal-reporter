@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
-import { getSettings } from '../getSettings';
+import { ESLint } from 'eslint';
 import { ReporterSettings } from '../types';
 
 //------------------------------------------------------------------------------
@@ -295,7 +295,7 @@ function renderProblemFiles(files: any[], currDir: string) {
 //------------------------------------------------------------------------------
 
 export default async function generateTemplate(
-  results: any[],
+  results: ESLint.LintResult[],
   reporterSettings: ReporterSettings
 ) {
   const currWorkingDir = process.cwd() || '';

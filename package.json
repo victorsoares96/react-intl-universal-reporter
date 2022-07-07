@@ -7,7 +7,7 @@
     "intl-report": "bin/intl-report"
   },
   "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "prepare": "husky install",
     "clean": "rimraf dist/",
@@ -27,6 +27,7 @@
     "postbuild": "npm run copy-files:cjs && npm run copy-files:esm",
     "prerelease": "npm run lint:fix && npm run type-check && npm run test:coverage",
     "release": "npm run build && npm publish",
+    "release-local": "npm run build && npm link && echo [FINISH]: Run \"npm link react-intl-universal-reporter\" to link the package to your project",
     "commit": "git-cz"
   },
   "publishConfig": {

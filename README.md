@@ -7,11 +7,11 @@
 ## Installation
 
 ```sh
-$ npm install react-intl-universal-reporter --save-dev
+npm install react-intl-universal-reporter --save-dev
 ```
 
 ```sh
-$ yarn add -D react-intl-universal-reporter
+yarn add -D react-intl-universal-reporter
 ```
 
 ## Usage
@@ -127,9 +127,51 @@ This file will be used by the generator, it represents a set of instructions tha
 }
 ```
 
+## Usage as a function
+
+If you prefer, you can get the summarized data like this:
+
+```js
+import { generateResult } from 'react-intl-universal-reporter';
+
+(async () => {
+  const result = await generateResult("./src", "./.intlrc.json");
+  
+  console.log('Result:', result);
+})();
+```
+
+That asynchronous function above mentioned receives as argument:
+
+* `source`: The source path to the repository to be analyzed (required)
+* `configFilePath`: The path to the config file. Default is used or .intlrc founded in your project will be sought if not specified.
+
+That asynchronous function above mentioned returns:
+
+* `result`: The result of the analysis. [See the result structure](#result-structure)
+
+### Result Structure
+
+```ts
+type Result = {
+  /**
+   * Number of occurrences of non-internationalized strings.
+   */
+  notInternationalizedCount: number;
+  /**
+   * Number of occurrences of internationalized strings.
+   */
+  internationalizedCount: number;
+  /**
+   * Percentage of occurrences of internationalized strings.
+   */
+  percentage: number;
+};
+```
+
 ## Thanks
 
-- [eslint-detailed-reporter](https://github.com/mportuga/eslint-detailed-reporter) by [mportuga](https://github.com/mportuga), many parts of my project were based on yours.
+* [eslint-detailed-reporter](https://github.com/mportuga/eslint-detailed-reporter) by [mportuga](https://github.com/mportuga), many parts of my project were based on yours.
 
 ## License
 

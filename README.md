@@ -36,7 +36,7 @@ Create a new script in `scripts` object inside `package.json` configuration file
 
 This file will be used by the generator, it represents a set of instructions that it needs to work. If you need the generator to work with custom configurations, create a file inside your project called `.intlrc` following this structure below or enter the path of your custom `.intlrc` using the `--config-file` flag.
 
-***This structure below represents the default configuration of the .intlrc file:***
+**_This structure below represents the default configuration of the .intlrc file:_**
 
 ```json
 {
@@ -135,20 +135,20 @@ If you prefer, you can get the summarized data like this:
 import { generateResult } from 'react-intl-universal-reporter';
 
 (async () => {
-  const result = await generateResult("./src", "./.intlrc.json");
-  
+  const result = await generateResult('./src', './.intlrc.json');
+
   console.log('Result:', result);
 })();
 ```
 
 That asynchronous function above mentioned receives as argument:
 
-* `source`: The source path to the repository to be analyzed (required)
-* `configFilePath`: The path to the config file. Default is used or .intlrc founded in your project will be sought if not specified.
+- `source`: The source path to the repository to be analyzed (required)
+- `configFilePath`: The path to the config file. Default is used or .intlrc founded in your project will be sought if not specified.
 
 That asynchronous function above mentioned returns:
 
-* `result`: The result of the analysis. [See the result structure](#result-structure)
+- `result`: The result of the analysis. [See the result structure](#result-structure)
 
 ### Result Structure
 
@@ -171,12 +171,11 @@ type Result = {
 
 ## Help to improve this project
 
-  If you find this project useful, please consider [donating](https://www.paypal.com/donate/?business=YNAUBS5LFN5KN&no_recurring=0&currency_code=USD) to support the development of this project.
-  
+If you find this project useful, please consider [donating](https://www.paypal.com/donate/?business=YNAUBS5LFN5KN&no_recurring=0&currency_code=USD) to support the development of this project.
 
 ## Thanks
 
-* [eslint-detailed-reporter](https://github.com/mportuga/eslint-detailed-reporter) by [mportuga](https://github.com/mportuga), many parts of my project were based on yours.
+- [eslint-detailed-reporter](https://github.com/mportuga/eslint-detailed-reporter) by [mportuga](https://github.com/mportuga), many parts of my project were based on yours.
 
 ## License
 

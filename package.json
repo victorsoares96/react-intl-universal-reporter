@@ -1,6 +1,6 @@
 {
   "name": "react-intl-universal-reporter",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "An report generator to measure the number of internationalized and non-internationalized occurrences of a project.",
   "main": "dist/cjs/index.js",
   "bin": {

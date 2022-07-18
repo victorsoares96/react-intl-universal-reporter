@@ -68,17 +68,18 @@
     ]
   },
   "peerDependencies": {
-    "eslint": "^8.0.0",
-    "@typescript-eslint/parser": "^5.0.0"
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^5.28.0",
     "eslint-plugin-react-intl-universal": "^1.0.4",
     "glob-promise": "^4.2.2",
     "gulp": "^4.0.2",
     "gulp-eslint-new": "^1.5.1",
+    "jstoxml": "^1.0.1",
     "lodash": "^4.17.21",
     "ora": "5.4.1",
-    "@typescript-eslint/parser": "^5.28.0",
     "typescript": "4.4.4"
   },
   "devDependencies": {
@@ -86,6 +87,7 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@types/gulp": "^4.0.9",
     "@types/jest": "^28.1.3",
+    "@types/jstoxml": "^2.0.2",
     "@types/lodash": "^4.14.182",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "commitizen": "^4.2.4",

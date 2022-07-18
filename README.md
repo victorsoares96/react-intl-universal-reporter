@@ -52,6 +52,7 @@ This file will be used by the generator, it represents a set of instructions tha
   ],
   "extensions": ["js", "jsx", "ts", "tsx"],
   "outputDir": "out",
+  "outputFormat": "json", // can be xml to
   "debug": false,
   "analyzer": {
     "mode": "jsx-text-only",
@@ -148,26 +149,7 @@ That asynchronous function above mentioned receives as argument:
 
 That asynchronous function above mentioned returns:
 
-- `result`: The result of the analysis. [See the result structure](#result-structure)
-
-### Result Structure
-
-```ts
-type Result = {
-  /**
-   * Number of occurrences of non-internationalized strings.
-   */
-  notInternationalizedCount: number;
-  /**
-   * Number of occurrences of internationalized strings.
-   */
-  internationalizedCount: number;
-  /**
-   * Percentage of occurrences of internationalized strings.
-   */
-  percentage: number;
-};
-```
+- `result`: The result of the analysis. [See the result structure](src/types.ts#L36)
 
 ## Help to improve this project
 

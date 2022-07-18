@@ -929,6 +929,11 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
+"@types/jstoxml@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/jstoxml/-/jstoxml-2.0.2.tgz#7ccfe12412857cc541a737ae56ce2559bd9b8ef4"
+  integrity sha512-60VaXPlZbd7tEhloAkE2E0lg+QoWpnGusdy+2pGMGFFpdsyxm/1GKs0o/nLJJKWXci92cnq2utmqaV5L7Zjqxw==
+
 "@types/lodash@^4.14.182":
   version "4.14.182"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.182.tgz#05301a4d5e62963227eaafe0ce04dd77c54ea5c2"
@@ -4406,6 +4411,11 @@ jsonparse@^1.2.0:
   version "1.3.1"
   resolved "https://registry.npmjs.org/jsonparse/-/jsonparse-1.3.1.tgz"
   integrity sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==
+
+jstoxml@^1.0.1:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/jstoxml/-/jstoxml-1.6.11.tgz#295f3aec62b845310026c702173fab0c65fc8f6c"
+  integrity sha512-7X6qWhnru9dtSLoGilRFycpMgxX0LA+7cZORi2ObYTiwbPN0Byl3v9aaGnb0XrWWloub9W6z5zM5fW9HOoWctA==
 
 just-debounce@^1.0.0:
   version "1.1.0"

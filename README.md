@@ -52,7 +52,7 @@ This file will be used by the generator, it represents a set of instructions tha
   ],
   "extensions": ["js", "jsx", "ts", "tsx"],
   "outputDir": "out",
-  "outputFormat": "json", // can be xml to
+  "outputFormat": "html", // can be xml to
   "debug": false,
   "analyzer": {
     "mode": "jsx-text-only",

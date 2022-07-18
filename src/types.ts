@@ -151,7 +151,6 @@ export type ReporterSettings = {
 export type CLIArguments = {
   '--source': string;
   '--config-file'?: string;
-  '--extensions'?: string[];
 };
 
 export type ReportOptions = {

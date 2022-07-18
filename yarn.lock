@@ -4412,10 +4412,10 @@ jsonparse@^1.2.0:
   resolved "https://registry.npmjs.org/jsonparse/-/jsonparse-1.3.1.tgz"
   integrity sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==
 
-jstoxml@^1.0.1:
-  version "1.6.11"
-  resolved "https://registry.yarnpkg.com/jstoxml/-/jstoxml-1.6.11.tgz#295f3aec62b845310026c702173fab0c65fc8f6c"
-  integrity sha512-7X6qWhnru9dtSLoGilRFycpMgxX0LA+7cZORi2ObYTiwbPN0Byl3v9aaGnb0XrWWloub9W6z5zM5fW9HOoWctA==
+jstoxml@^3.0.0:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/jstoxml/-/jstoxml-3.2.3.tgz#2627c193f61b413bb54991130f07e0c7c25ed558"
+  integrity sha512-IxoZkdFcKm1dO4g+JcZBB7z1p/vPXEZPV3APRDd3/zcVtthg2kfTmpzKNZMl37/MrE/Uoc2p6ZnLnv3P5HVMTw==
 
 just-debounce@^1.0.0:
   version "1.1.0"

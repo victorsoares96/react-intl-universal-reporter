@@ -1,58 +1,42 @@
-import gulp from 'gulp';
-import gulpESLintNew from 'gulp-eslint-new';
-import path from 'path';
 import fs from 'fs';
-import ora from 'ora';
-import generateTemplate from './templates/template-generator';
-import eslintConfig from './eslint_config';
-import { Analyzer, ReporterSettings } from './types';
+import path from 'path';
+import _ from 'lodash';
+
+import { renderSummaryTemplate } from './templates/summary.template';
+
+import { ReporterSettings, Results } from './types';
+import { renderResultsTemplate } from './templates/results.template';
+
+const pageTemplate = _.template(
+  fs.readFileSync(path.join(__dirname, 'templates', 'main-page.html'), 'utf-8')
+);
+
+const styles = _.template(
+  fs.readFileSync(path.join(__dirname, 'helpers/styles.html'), 'utf-8')
+);
+
+const scripts = _.template(
+  fs.readFileSync(path.join(__dirname, 'helpers/scripts.html'), 'utf-8')
+);
 
 export async function generateReport(
-  files: string[],
-  output: string,
-  debug: boolean,
-  analyzer: Analyzer,
-  reporterSettings: ReporterSettings
-): Promise<NodeJS.ReadWriteStream> {
-  let filesProcessed = 0;
-  const totalFiles = files.length;
+  result: Results,
+  config: ReporterSettings
+) {
+  const { template } = config;
 
-  const spinner = ora('Generating report').start();
-  return gulp
-    .src(files)
-    .pipe(
-      gulpESLintNew({
-        useEslintrc: false,
-        allowInlineConfig: false,
-        baseConfig: {
-          ...eslintConfig,
-          rules: {
-            ...eslintConfig.rules,
-            'react-intl-universal/no-literal-string': ['error', analyzer],
-          },
-        },
-      })
-    )
-    .pipe(
-      gulpESLintNew
-        .format(
-          (results) => generateTemplate(results, reporterSettings),
-          (results) => {
-            const reportName = `intl-report-${new Date().getTime()}.html`;
-            if (!fs.existsSync(output)) fs.mkdirSync(output);
-            fs.writeFileSync(path.join(output, reportName), results);
-            spinner.succeed(
-              `Generated report for ${totalFiles} files. See ${output}/${reportName}`
-            );
-          }
-        )
-        .on('data', (file) => {
-          filesProcessed += 1;
-          spinner.text = `Generating report (${filesProcessed}/${totalFiles})`;
+  const { internationalizedCount, notInternationalizedCount, results } = result;
 
-          if (debug) {
-            console.log(`\nFile processed: ${file.path}`);
-          }
-        })
-    );
+  const currentDir = process.cwd() || '';
+
+  return pageTemplate({
+    title: template.title,
+    reportSummary: renderSummaryTemplate(
+      notInternationalizedCount,
+      internationalizedCount
+    ),
+    results: renderResultsTemplate(results, currentDir),
+    styles: styles(),
+    scripts: scripts(),
+  });
 }

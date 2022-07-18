@@ -11,6 +11,7 @@
   ],
   "extensions": ["js", "jsx", "ts", "tsx"],
   "outputDir": "out",
+  "outputFormat": "html",
   "debug": false,
   "analyzer": {
     "mode": "jsx-text-only",

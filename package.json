@@ -74,7 +74,7 @@
   "dependencies": {
     "@typescript-eslint/parser": "^5.28.0",
     "eslint-plugin-react-intl-universal": "^1.0.4",
-    "glob-promise": "^4.2.2",
+    "glob-promise": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-eslint-new": "^1.5.1",
     "jstoxml": "^1.0.1",
